@@ -1,0 +1,15 @@
+{
+  "name": "iqual/iq_lang_switcher",
+  "description": "Only show published languages in language switcher.",
+  "type": "drupal-custom-module",
+  "keywords": [
+    "Drupal"
+  ],
+  "homepage": "https://github.com/iqual-ch/iq_lang_switcher",
+  "support": {
+    "issues": "https://github.com/iqual-ch/iq_lang_switcher/issues",
+    "source": "https://github.com/iqual-ch/iq_lang_switcher"
+  },
+  "require": {
+  }
+}
