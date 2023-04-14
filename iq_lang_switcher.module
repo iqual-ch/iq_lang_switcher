@@ -2,10 +2,11 @@
 
 /**
  * @file
+ * Implements the iq_lang_switcher module.
  */
 
 /**
- *
+ * Implements hook_language_switch_links_alter().
  */
 function iq_lang_switcher_language_switch_links_alter(array &$links, $type, $path) {
   if (\Drupal::currentUser()->hasPermission('bypass node access')) {
