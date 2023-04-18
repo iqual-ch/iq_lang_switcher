@@ -7,7 +7,7 @@
 
 /**
  * Implements hook_language_switch_links_alter().
- * 
+ *
  * Unset links to untranslated or unpublished translations.
  */
 function iq_lang_switcher_language_switch_links_alter(array &$links, $type, $path) {
@@ -22,7 +22,8 @@ function iq_lang_switcher_language_switch_links_alter(array &$links, $type, $pat
         if (!$translation->isPublished()) {
           unset($links[$langcode]);
         }
-      } else {
+      }
+      else {
         unset($links[$langcode]);
       }
     }
