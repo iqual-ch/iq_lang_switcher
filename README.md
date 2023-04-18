@@ -1,6 +1,7 @@
 # iqual/iq_lang_switcher
 
-Disables untranslated and unpublished translation languages of the current node in the language switcher link list.
+Disables untranslated and unpublished translation languages 
+of the current node in the language switcher link list.
 
 ## Installation
 
