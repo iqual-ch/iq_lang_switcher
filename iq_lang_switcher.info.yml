@@ -3,4 +3,4 @@ description: Disables inactive languages in front end.
 package: Custom
 
 type: module
-core_version_requirement: ^8.8 || ^9
+core_version_requirement: ^9 || ^10
