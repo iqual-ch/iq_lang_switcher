@@ -1,22 +1,31 @@
 <?php
-function iq_lang_switcher_language_switch_links_alter(array &$links, $type, $path)
-{
-    if (\Drupal::currentUser()->hasPermission('bypass node access')) {
-        return;
-    }
-    if ($node = \Drupal::routeMatch()->getParameter('node')) {
-        $translations = $node->getTranslationLanguages(true); 
-        foreach ($links as $langcode => $link) {
-            if ($node) {
-                if (array_key_exists($langcode, $translations)) {
-                    $translation = $node->getTranslation($langcode);
-                    if (!$translation->isPublished()) {
-                        unset($links[$langcode]);
-                    }
-                } else {
-                    unset($links[$langcode]);
-                }
-            }
+
+/**
+ * @file
+ * Implements the iq_lang_switcher module.
+ */
+
+/**
+ * Implements hook_language_switch_links_alter().
+ *
+ * Unset links to untranslated or unpublished translations.
+ */
+function iq_lang_switcher_language_switch_links_alter(array &$links, $type, $path) {
+  if (\Drupal::currentUser()->hasPermission('bypass node access')) {
+    return;
+  }
+  if (!empty($node = \Drupal::routeMatch()->getParameter('node'))) {
+    $translations = $node->getTranslationLanguages(TRUE);
+    foreach ($links as $langcode => $link) {
+      if (array_key_exists($langcode, $translations)) {
+        $translation = $node->getTranslation($langcode);
+        if (!$translation->isPublished()) {
+          unset($links[$langcode]);
         }
+      }
+      else {
+        unset($links[$langcode]);
+      }
     }
+  }
 }
