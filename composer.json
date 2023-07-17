@@ -9,5 +9,9 @@
   "support": {
     "issues": "https://github.com/iqual-ch/iq_lang_switcher/issues",
     "source": "https://github.com/iqual-ch/iq_lang_switcher"
+  },
+  "require": {
+    "php": "^8.1",
+    "drupal/core": "^9.5 || ^10"
   }
 }
